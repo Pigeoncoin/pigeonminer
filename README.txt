@@ -1,32 +1,22 @@
-suprminer 1.1 (March 2018) optimized x16r algo without any dev fee.
-
-Most optimizations come from alexis, so please tip him (addr below)
-
+Pigeonminer 2.2.6 (May 2018) optimized x16s algo without any dev fee.
 original README as follows:
 
 
-
-ccminer 2.2.5 (Feb 2018)                            "x16r algo"
+Pigeonminer 2.2.6 (May 2018)                            "x16s algo"
 ---------------------------------------------------------------
 
 ***************************************************************
 If you find this tool useful and like to support its continuous
           development, then consider a donation.
 
+Pigeoncoin Dev Fund:
+  PGN: PDiZ89gk5HMqwrcGp6Hs9WdgFALzLbD4HG
+  BTC: 1NaVP4cKiWY6MxSDkTCZ2kh5Xm3coA27Qv
+
+ccminer's original author
 tpruvot@github:
   BTC  : 1AJdfCpLWPNoAMDfHF1wD5y8VgKSSTHxPo
   DCR  : DsUCcACGcyP8McNMRXQwbtpDxaVUYLDQDeU
-
-DJM34:
-  BTC donation address: 1NENYmxwZGHsKFmyjTc5WferTn5VTFb7Ze
-
-cbuchner v1.2:
-  LTC donation address: LKS1WDKGED647msBQfLBHV3Ls8sveGncnm
-  BTC donation address: 16hJF5mceSojnTD3ZTUDqdRhDyPJzoRakM
-
-alexis:
-  RVN donation address: RFg6gtkg6fFzsY64hWANTQC79yvNaQv8sL
-
 ***************************************************************
 
 >>> Introduction <<<
@@ -65,6 +55,8 @@ Ziftrcoin (ZR5)
 Boolberry (Wild Keccak)
 Monero (Cryptonight)
 Aeon (Cryptonight-lite)
+X16r (Ravencoin)
+X16s (Pigeoncoin)
 
 where some of these coins have a VERY NOTABLE nVidia advantage
 over competing AMD (OpenCL Only) implementations.
@@ -133,6 +125,7 @@ its command line interface and options.
                           x14         use to mine X14Coin
                           x15         use to mine Halcyon
                           x16r        use to mine Raven
+                          x16s        use to mine Pigeoncoin
                           x17         use to mine X17
                           vanilla     use to mine Vanilla (Blake256)
                           veltor      use to mine VeltorCoin
@@ -228,31 +221,34 @@ Wildkeccak specific:
 
 >>> Examples <<<
 
+Example for Pigeoncoin Mining on pool.pigeoncoin.org with a single gpu in your system
+    Pigeonminer -t 1 -a x16s -o stratum+tcp://pool.pigeoncoin.org:3663 -u <<username.worker>> -p <<workerpassword>>
+
 
 Example for Heavycoin Mining on heavycoinpool.com with a single gpu in your system
-    ccminer -t 1 -a heavy -o stratum+tcp://stratum01.heavycoinpool.com:5333 -u <<username.worker>> -p <<workerpassword>> -v 8
+    Pigeonminer -t 1 -a heavy -o stratum+tcp://stratum01.heavycoinpool.com:5333 -u <<username.worker>> -p <<workerpassword>> -v 8
 
 
 Example for Heavycoin Mining on hvc.1gh.com with a dual gpu in your system
-    ccminer -t 2 -a heavy -o stratum+tcp://hvcpool.1gh.com:5333/ -u <<WALLET>> -p x -v 8
+    Pigeonminer -t 2 -a heavy -o stratum+tcp://hvcpool.1gh.com:5333/ -u <<WALLET>> -p x -v 8
 
 
 Example for Fuguecoin solo-mining with 4 gpu's in your system and a Fuguecoin-wallet running on localhost
-    ccminer -q -s 1 -t 4 -a fugue256 -o http://localhost:9089/ -u <<myusername>> -p <<mypassword>>
+    Pigeonminer -q -s 1 -t 4 -a fugue256 -o http://localhost:9089/ -u <<myusername>> -p <<mypassword>>
 
 
 Example for Fuguecoin pool mining on dwarfpool.com with all your GPUs
-    ccminer -q -a fugue256 -o stratum+tcp://erebor.dwarfpool.com:3340/ -u YOURWALLETADDRESS.1 -p YOUREMAILADDRESS
+    Pigeonminer -q -a fugue256 -o stratum+tcp://erebor.dwarfpool.com:3340/ -u YOURWALLETADDRESS.1 -p YOUREMAILADDRESS
 
 
 Example for Groestlcoin solo mining
-    ccminer -q -s 1 -a groestl -o http://127.0.0.1:1441/ -u USERNAME -p PASSWORD
+    Pigeonminer -q -s 1 -a groestl -o http://127.0.0.1:1441/ -u USERNAME -p PASSWORD
 
 Example for Boolberry
-    ccminer -a wildkeccak -o stratum+tcp://bbr.suprnova.cc:7777 -u tpruvot.donate -p x -k http://bbr.suprnova.cc/scratchpad.bin -l 64x360
+    Pigeonminer -a wildkeccak -o stratum+tcp://bbr.suprnova.cc:7777 -u tpruvot.donate -p x -k http://bbr.suprnova.cc/scratchpad.bin -l 64x360
 
 Example for Scrypt-N (2048) on Nicehash
-    ccminer -a scrypt:10 -o stratum+tcp://stratum.nicehash.com:3335 -u 3EujYFcoBzWvpUEvbe3obEG95mBuU88QBD -p x
+    Pigeonminer -a scrypt:10 -o stratum+tcp://stratum.nicehash.com:3335 -u 3EujYFcoBzWvpUEvbe3obEG95mBuU88QBD -p x
 
 For solo-mining you typically use -o http://127.0.0.1:xxxx where xxxx represents
 the rpcport number specified in your wallet's .conf file and you have to pass the same username
@@ -269,7 +265,7 @@ This allow you to run the miner without batch/script.
 
 >>> API and Monitoring <<<
 
-With the -b parameter you can open your ccminer to your network, use -b 0.0.0.0:4068 if required.
+With the -b parameter you can open your Pigeonminer to your network, use -b 0.0.0.0:4068 if required.
 On windows, setting 0.0.0.0 will ask firewall permissions on the first launch. Its normal.
 
 Default API feature is only enabled for localhost queries by default, on port 4068.
@@ -288,6 +284,9 @@ so we can more efficiently implement new algorithms using the latest hardware
 features.
 
 >>> RELEASE HISTORY <<<
+  May. 2018		  v2.2.6
+				  New x16s algo for mining pigeoncoin.
+
   Feb. 2017       v2.2.5
                   New x16r algo
 
@@ -315,7 +314,7 @@ features.
   Aug. 13th 2017  v2.2
                   New skunk algo, using the heavy streebog algorithm
                   Enhance tribus algo (+10%)
-                  equihash protocol enhancement on yiimp.ccminer.org and zpool.ca
+                  equihash protocol enhancement on yiimp.Pigeonminer.org and zpool.ca
 
   June 16th 2017  v2.1-tribus
                   Interface equihash algo with djeZo solver (from nheqminer 0.5c)
@@ -420,7 +419,7 @@ features.
 
   May 26th 2015   v1.6.4
                   Implement multi-pool support (failover and time rotate)
-                    try "ccminer -c pools.conf" to test the sample config
+                    try "Pigeonminer -c pools.conf" to test the sample config
                   Update the API to allow remote pool switching and pool stats
                   Auto bind the api port to the first available when using default
                   Try to compute network difficulty on pools too (for most algos)
@@ -451,7 +450,7 @@ features.
 
   Feb. 11th 2015  v1.5.3
                   Fix anime algo
-                  Allow a default config file in user or ccminer folder
+                  Allow a default config file in user or Pigeonminer folder
                   SM 2.1 windows binary (lyra2 and blake/blakecoin for the moment)
 
   Jan. 24th 2015  v1.5.2
@@ -576,7 +575,7 @@ features.
   March, 24 2014  fixed Groestl pool support
 
                   went back to Compute 1.x for cuda_hefty1.cu kernel by
-                  default after numerous reports of ccminer v0.2/v0.3
+                  default after numerous reports of Pigeonminer v0.2/v0.3
                   not working with HeavyCoin for some people.
 
   March, 23 2014  added Groestlcoin support. stratum status unknown

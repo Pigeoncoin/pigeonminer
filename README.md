@@ -1,15 +1,14 @@
 # ccminer
 
-suprminer 1.0 (March 2018) optimized x16r algo without any dev fee.
-
-Most optimizations come from alexis, so please tip him (addr below)
-
-original README as follows:
+Pigeonminer 2.2.6 (May 2018) optimized x16s algo without any dev fee.
 
 
-alexis:
-  RVN donation address: RFg6gtkg6fFzsY64hWANTQC79yvNaQv8sL
+If you find this tool useful and like to support its continuous
+          development, then consider a donation.
 
+Pigeoncoin Dev Fund:
+  PGN: PDiZ89gk5HMqwrcGp6Hs9WdgFALzLbD4HG
+  BTC: 1NaVP4cKiWY6MxSDkTCZ2kh5Xm3coA27Qv
 
 
 

@@ -52,7 +52,7 @@ END
 
 // Icon with lowest ID value placed first to ensure application icon
 // remains consistent on all systems.
-IDI_ICON1               ICON                    "ccminer.ico"
+IDI_ICON1               ICON                    "pigeon.ico"
 
 /////////////////////////////////////////////////////////////////////////////
 //
@@ -76,10 +76,10 @@ BEGIN
     BEGIN
         BLOCK "040904e4"
         BEGIN
-            VALUE "FileVersion", "2.2.5"
+            VALUE "FileVersion", "2.2.6"
             VALUE "LegalCopyright", "Copyright (C) 2018"
-            VALUE "ProductName", "ccminer"
-            VALUE "ProductVersion", "2.2.5"
+            VALUE "ProductName", "Pigeonminer"
+            VALUE "ProductVersion", "2.2.6"
         END
     END
     BLOCK "VarFileInfo"

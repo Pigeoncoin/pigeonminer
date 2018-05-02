@@ -262,6 +262,7 @@
     <ClCompile Include="lyra2\Lyra2.c" />
     <ClCompile Include="lyra2\Sponge.c" />
     <ClCompile Include="lyra2\Lyra2Z.c" />
+    <ClInclude Include="donate.h" />
     <ClInclude Include="equi\eqcuda.hpp" />
     <ClInclude Include="equi\equihash.h" />
     <ClInclude Include="neoscrypt\neoscrypt.h" />
