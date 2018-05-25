@@ -1,6 +1,6 @@
 # ccminer
 
-Pigeonminer 2.2.6 (May 2018) optimized x16s algo without any dev fee.
+Pigeonminer 2.2.5 (May 2018) optimized x16s algo without any dev fee.
 
 
 If you find this tool useful and like to support its continuous
